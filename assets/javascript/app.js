@@ -7,11 +7,12 @@ $(document).ready(function () {
         var newButton = $("<button/>");
         newButton.addClass("animalButton");
         newButton.text(topics[i]);
+        $("#buttonSection").append(newButton);
     }
 
     $("button").on("click", ".animalButton", function() {
 
-        
+
     });
 
 });
