@@ -3,6 +3,7 @@ var topics = ["cat", "dog", "rabbit", "hamster", "skunk", "goldfish", "bird", "f
 
 $(document).ready(function () {
 
+    // Creates button when page loads
     for (var i = 0; i < topics.length; i++) {
         var newButton = $("<button/>");
         newButton.addClass("animalButton");
@@ -11,6 +12,7 @@ $(document).ready(function () {
         $("#buttonSection").append(newButton);
     }
 
+    // When a button is clicked, event listener generates gifs with giphy API
     $(".animalButton").on("click", function() {
 
         var animal = $(this).attr("data-name");
@@ -36,6 +38,24 @@ $(document).ready(function () {
                 $("#gifGenerated").prepend(newGif);
             }
         });
+
+    });
+
+    // When gif is clicked, play or pause the gif
+    $(".gif").on("click", function() {
+
+        var state = $(this).attr("data-state");
+        var stillUrl = $(this).attr("data-still");
+        var animateUrl = $(this).attr("data-animate");
+
+        if (state === "still") {
+            $(this).attr("src", animateUrl);
+            $(this).attr("data-state", "animate")
+        } 
+        else if (state === "animate") {
+            $(this).attr("src", stillUrl);
+            $(this).attr("data-state", "still");
+        }
 
     });
 
