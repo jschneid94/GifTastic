@@ -23,6 +23,15 @@ $(document).ready(function () {
         }).then(function(response){
 
             console.log(response);
+
+            results = response.data;
+
+            for (var i = 0; i < 10; i++) {
+                var newGif = $("<img/>");
+                newGif.attr("src", results[i].images.fixed_width_still.url);
+                newGif.addClass("gif");
+                $("#gifGenerated").append(newGif);
+            }
         });
 
     });
