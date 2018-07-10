@@ -47,15 +47,13 @@ $(document).ready(function () {
     $(".gif").on("click", function() {
 
         var state = $(this).attr("data-state");
-        var stillUrl = $(this).attr("data-still");
-        var animateUrl = $(this).attr("data-animate");
 
         if (state === "still") {
-            $(this).attr("src", animateUrl);
+            $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
         } 
         else if (state === "animate") {
-            $(this).attr("src", stillUrl);
+            $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
 
