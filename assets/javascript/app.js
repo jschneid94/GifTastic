@@ -28,9 +28,12 @@ $(document).ready(function () {
 
             for (var i = 0; i < 10; i++) {
                 var newGif = $("<img/>");
-                newGif.attr("src", results[i].images.fixed_width_still.url);
                 newGif.addClass("gif");
-                $("#gifGenerated").append(newGif);
+                newGif.attr("src", results[i].images.fixed_width_still.url);
+                newGif.attr("data-still", results[i].images.fixed_width_still.url);
+                newGif.attr("data-animate", results[i].images.fixed_width.url);
+                newGif.attr("data-state", "still");
+                $("#gifGenerated").prepend(newGif);
             }
         });
 
