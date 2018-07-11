@@ -29,12 +29,15 @@ $(document).ready(function () {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-                var gifDiv = $("<div/>")
+                var gifDiv = $("<div>")
                 var rating = $("<div>Rating: " + results[i].rating + "</div>");
-                var newGif = $("<img src=" + results[i].images.fixed_width_still.url + ">");
+                var stillUrl = results[i].images.fixed_width_still.url;
+                var animateUrl = results[i].images.fixed_width.url;
+                var newGif = $("<img>");
+                newGif.attr("src", stillUrl);
                 newGif.addClass("gif");
-                newGif.attr("data-still", results[i].images.fixed_width_still.url);
-                newGif.attr("data-animate", results[i].images.fixed_width.url);
+                newGif.attr("data-still", stillUrl);
+                newGif.attr("data-animate", animateUrl);
                 newGif.attr("data-state", "still");
                 gifDiv.append(rating, newGif);
                 $("#gifGenerated").prepend(gifDiv);
@@ -44,7 +47,7 @@ $(document).ready(function () {
     });
 
     // When gif is clicked, play or pause the gif
-    $(".gif").on("click", function() {
+    $("#gifGenerated").on("click", ".gif", function() {
 
         var state = $(this).attr("data-state");
 
@@ -52,7 +55,7 @@ $(document).ready(function () {
             $(this).attr("src", $(this).attr("data-animate"));
             $(this).attr("data-state", "animate");
         } 
-        else if (state === "animate") {
+        else {
             $(this).attr("src", $(this).attr("data-still"));
             $(this).attr("data-state", "still");
         }
