@@ -27,50 +27,51 @@
   </head>
 
   <body>
+
+    <nav class="navbar navbar-expand-lg py-3 bg-dark rounded">
+
+        <!-- Page Logo w/ GIPHY link -->
+        <div class="navbar-brand h1 px-3 mx-auto rounded bg-light">
+            <span class="mx-2">
+                Giftastic!
+            </span>
+            <span>
+                <small>Powered by:</small>
+                <a class="navbar-brand" href="https://giphy.com/">
+                    <img src="assets/images/giphy_logo.png" id="giphyLogo">
+                </a>
+            </span>
+        </div>
+
+        <!-- Button Section -->
+        <div class="btn-group btn-group-lg mx-auto" role="group">
+            <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Animal
+            </button>
+            <div  id="buttonSection" class="dropdown-menu" aria-labelledby="btnGroupDrop1"></div>
+        </div>
+
+    </nav>
+
+    <br />
+
     <div class="container-fluid">
 
-        <nav class="navbar navbar-expand-lg navbar-light">
-
-            <!-- Page Logo w/ GIPHY link -->
-            <div class="navbar-brand h1 px-3 mx-auto rounded bg-light">
-                <span class="mx-2">
-                    Giftastic!
-                </span>
-                <span>
-                    <small>Powered by:</small>
-                    <a class="navbar-brand" href="https://giphy.com/">
-                        <img src="assets/images/giphy_logo.png" id="giphyLogo">
-                    </a>
-                </span>
-            </div>
-
-            <!-- Button Section -->
-            <div class="btn-group btn-group-lg mx-auto" role="group">
-                <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Animal
-                </button>
-                <div  id="buttonSection" class="dropdown-menu" aria-labelledby="btnGroupDrop1"></div>
-            </div>
-
-        </nav>
-
-        <div class="container">
-
-             <!-- Gif Creation Section -->
-             <div id="gifCreate" class="col-md-4 col-sm-12 mx-auto">
-                <div>Add an animal:</div>
-                <form>
-                    <input type="text" id="buttonName">
-                    <input type="submit" id="submit">
-                </form>
-            </div>
-            
-            <!-- Gif Section -->
-            <div class="col-md-8 col-sm-12">
-                <div id="gifGenerated" class="mx-auto"></div>
-            </div>
-
+        <!-- Gif Creation Section -->
+        <div id="gifCreate" class="col-md-4 col-sm-12">
+            <span class="text-light mx-auto">Add an animal:</span>
+            <form class="form-inline mx-auto">
+                <label for="buttonName" class="sr-only">Enter an animal!</label>
+                <input type="text" id="buttonName" class="form-control mr-1">
+                <button type="submit" id="submit" class="btn btn-light">Submit</button>
+            </form>
         </div>
+        
+        <!-- Gif Section -->
+        <div class="col-md-8 col-sm-12">
+            <div id="gifGenerated" class="row mx-auto"></div>
+        </div>
+
 
     </div>
 

@@ -39,7 +39,7 @@ $(document).ready(function () {
 
                 // Create a div for containing and spacing
                 var gifDiv = $("<div>");
-                gifDiv.addClass("my-4");
+                gifDiv.addClass("my-4 col-md-4 col-sm-12");
 
                 // Gif with data attr
                 var newGif = $("<img>");
@@ -53,7 +53,7 @@ $(document).ready(function () {
 
                 // Rating
                 var rating = $("<div>Rating: " + results[i].rating + "</div>");
-                rating.addClass("text-center");
+                rating.addClass("text-center text-light bg-secondary");
 
                 // Put gif and rating into the div and generate in DOM
                 gifDiv.append(newGif, rating);
