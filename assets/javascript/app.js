@@ -1,9 +1,11 @@
 // Array of animals
 var topics = ["cat", "dog", "rabbit", "hamster", "skunk", "goldfish", "bird", "ferret", "turtle", "chicken", "chinchilla", "hedgehog", "pygmy goat", "hermit crab"];
 
-$(document).ready(function () {
+// Creates button when page loads
+function generateButton() {
 
-    // Creates button when page loads
+    $("#buttonSection").empty();
+
     for (var i = 0; i < topics.length; i++) {
         var newButton = $("<button/>");
         newButton.addClass("animalButton");
@@ -11,9 +13,14 @@ $(document).ready(function () {
         newButton.text(topics[i]);
         $("#buttonSection").append(newButton);
     }
+}
+
+$(document).ready(function () {
+
+    generateButton();
 
     // When a button is clicked, event listener generates gifs with giphy API
-    $(".animalButton").on("click", function() {
+    $("#buttonSection").on("click",".animalButton", function() {
 
         var animal = $(this).attr("data-name");
         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=GTFr2E2yjNnqLYzN3hbN5dShP4d2Es7F&limit=10";
@@ -60,6 +67,24 @@ $(document).ready(function () {
             $(this).attr("data-state", "still");
         }
 
+    });
+
+    $("#submit").on("click", function() {
+
+        event.preventDefault();
+
+        var textInput = $("#buttonName").val();
+
+        if (textInput === "") {
+            alert("You can't create a button without a search term!");
+            return false
+        } else {
+
+            topics.push(textInput);
+
+            generateButton();
+
+        }
     });
 
 });
