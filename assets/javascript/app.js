@@ -8,7 +8,7 @@ function generateButton() {
 
     for (var i = 0; i < topics.length; i++) {
         var newButton = $("<button/>");
-        newButton.addClass("animalButton");
+        newButton.addClass("animalButton dropdown-item");
         newButton.attr("data-name", topics[i]);
         newButton.text(topics[i]);
         $("#buttonSection").append(newButton);
