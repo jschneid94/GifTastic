@@ -79,11 +79,9 @@ $(document).ready(function () {
             alert("You can't create a button without a search term!");
             return false
         } else {
-
             topics.push(textInput);
-
             generateButton();
-
+            $("#buttonName").val("");
         }
     });
 
