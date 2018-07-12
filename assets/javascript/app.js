@@ -36,17 +36,27 @@ $(document).ready(function () {
             var results = response.data;
 
             for (var i = 0; i < results.length; i++) {
-                var gifDiv = $("<div>")
-                var rating = $("<div>Rating: " + results[i].rating + "</div>");
+
+                // Create a div for containing and spacing
+                var gifDiv = $("<div>");
+                gifDiv.addClass("my-4");
+
+                // Gif with data attr
+                var newGif = $("<img>");
                 var stillUrl = results[i].images.fixed_width_still.url;
                 var animateUrl = results[i].images.fixed_width.url;
-                var newGif = $("<img>");
                 newGif.attr("src", stillUrl);
-                newGif.addClass("gif");
+                newGif.addClass("gif d-block mx-auto");
                 newGif.attr("data-still", stillUrl);
                 newGif.attr("data-animate", animateUrl);
                 newGif.attr("data-state", "still");
-                gifDiv.append(rating, newGif);
+
+                // Rating
+                var rating = $("<div>Rating: " + results[i].rating + "</div>");
+                rating.addClass("text-center");
+
+                // Put gif and rating into the div and generate in DOM
+                gifDiv.append(newGif, rating);
                 $("#gifGenerated").prepend(gifDiv);
             }
         });
@@ -72,7 +82,6 @@ $(document).ready(function () {
     $("#submit").on("click", function() {
 
         event.preventDefault();
-
         var textInput = $("#buttonName").val();
 
         if (textInput === "") {
