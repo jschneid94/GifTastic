@@ -39,7 +39,7 @@ $(document).ready(function () {
 
                 // Create a div for containing and spacing
                 var gifDiv = $("<div>");
-                gifDiv.addClass("my-4 col-md-4 col-sm-12");
+                gifDiv.addClass("my-4 mx-auto");
 
                 // Gif with data attr
                 var newGif = $("<img>");

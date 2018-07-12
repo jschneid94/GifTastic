@@ -56,23 +56,24 @@
     <br />
 
     <div class="container-fluid">
+        <div class="row">
 
-        <!-- Gif Creation Section -->
-        <div id="gifCreate" class="col-md-4 col-sm-12">
-            <span class="text-light mx-auto">Add an animal:</span>
-            <form class="form-inline mx-auto">
-                <label for="buttonName" class="sr-only">Enter an animal!</label>
-                <input type="text" id="buttonName" class="form-control mr-1">
-                <button type="submit" id="submit" class="btn btn-light">Submit</button>
-            </form>
+            <!-- Gif Creation Section -->
+            <div id="gifCreate" class="col-md-4 col-sm-12">
+                <div class="text-light text-center">Add an animal:</div>
+                <form class="form-inline justify-content-center">
+                    <label for="buttonName" class="sr-only">Enter an animal!</label>
+                    <input type="text" id="buttonName" class="form-control mr-1">
+                    <button type="submit" id="submit" class="btn btn-light">Submit</button>
+                </form>
+            </div>
+            
+            <!-- Gif Section -->
+            <div class="col-md-8 col-sm-12">
+                <div id="gifGenerated" class="row mx-auto"></div>
+            </div>
+            
         </div>
-        
-        <!-- Gif Section -->
-        <div class="col-md-8 col-sm-12">
-            <div id="gifGenerated" class="row mx-auto"></div>
-        </div>
-
-
     </div>
 
 
