@@ -28,10 +28,10 @@
 
   <body>
 
-    <nav class="navbar navbar-expand-lg py-3 bg-dark rounded">
+    <nav class="navbar navbar-expand-lg py-3 rounded">
 
         <!-- Page Logo w/ GIPHY link -->
-        <div class="navbar-brand h1 px-3 mx-auto rounded bg-light">
+        <div class="navbar-brand h1 px-3 mx-auto rounded">
             <span class="mx-2">
                 Giftastic!
             </span>
@@ -45,10 +45,10 @@
 
         <!-- Button Section -->
         <div class="btn-group btn-group-lg mx-auto" role="group">
-            <button id="btnGroupDrop1" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button id="btnGroupDrop" type="button" class="btn dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Animal
             </button>
-            <div  id="buttonSection" class="dropdown-menu" aria-labelledby="btnGroupDrop1"></div>
+            <div  id="buttonSection" class="dropdown-menu" aria-labelledby="btnGroupDrop"></div>
         </div>
 
     </nav>
@@ -60,7 +60,7 @@
 
             <!-- Gif Creation Section -->
             <div id="gifCreate" class="col-md-4 col-sm-12">
-                <div class="text-light text-center">Add an animal:</div>
+                <div id="btnPrompt" class="text-center">Add an animal:</div>
                 <form class="form-inline justify-content-center">
                     <label for="buttonName" class="sr-only">Enter an animal!</label>
                     <input type="text" id="buttonName" class="form-control mr-1">

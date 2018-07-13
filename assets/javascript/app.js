@@ -53,7 +53,7 @@ $(document).ready(function () {
 
                 // Rating
                 var rating = $("<div>Rating: " + results[i].rating + "</div>");
-                rating.addClass("text-center text-light bg-secondary");
+                rating.addClass("rating text-center");
 
                 // Put gif and rating into the div and generate in DOM
                 gifDiv.append(newGif, rating);

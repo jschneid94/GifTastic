@@ -1,8 +1,37 @@
 body {
-    background: darkcyan;
+    background: #632A7E;
 }
 
 #giphyLogo {
     width: 80px;
     height: auto;
+}
+
+#btnGroupDrop {
+    background-color: #A13E97;
+    color: #D3B7D8;
+}
+
+#submit {
+    background-color: #A13E97;
+    border-color: #A13E97;
+    color: #D3B7D8;
+}
+
+#btnPrompt {
+    color: #D3B7D8;
+}
+
+.navbar {
+    background-color: #280E3B;
+}
+
+.navbar-brand {
+    background-color: #A13E97;
+    color: #D3B7D8;
+}
+
+.rating {
+    background-color: #280E3B;
+    color: #D3B7D8;
 }
