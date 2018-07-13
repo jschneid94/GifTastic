@@ -2,6 +2,11 @@ body {
     background: #632A7E;
 }
 
+input[type="text"], textarea {
+    background-color : #D3B7D8;
+    border-color: #D3B7D8;
+}
+
 .navbar {
     background-color: #280E3B;
 }
